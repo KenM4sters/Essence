@@ -1,5 +1,6 @@
-#include <iostream>
 #include "Vector4.hpp"
+#include <iostream>
+#include <iomanip>
 
 namespace Ess 
 {
@@ -49,5 +50,13 @@ float Vector4::Dot(const Vector4& other) const
 float Vector4::Magnitude() const 
 {
     return std::sqrt((x*x) + (y*y) + (z*z) + (w*w));
+}
+
+void Vector4::Print() const 
+{
+    std::cout << "(" << std::setw(8) << std::setprecision(4) << std::fixed << x << ", "
+        << std::setw(8) << std::setprecision(4) << std::fixed << y << ", "
+        << std::setw(8) << std::setprecision(4) << std::fixed << z << ", "
+        << std::setw(8) << std::setprecision(4) << std::fixed << w << ")" << std::endl;
 }
 }

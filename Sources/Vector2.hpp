@@ -73,7 +73,11 @@ public:
     */
     float Magnitude() const;
 
-private:
+    /**
+     * @brief Prints the values of this instance to the terminal.
+    */
+    void Print() const;
+
     float x{0.0f};
     float y{0.0f};
 };

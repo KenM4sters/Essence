@@ -14,18 +14,6 @@ public:
      * @param initializer value to initialize the Matrix4 diagonal with.
     */
     Matrix4(float initializer);
-
-    /**
-     * @param other Matrix4 to add with.
-     * @return The resultant Matrix4.
-    */
-    Matrix4 operator+(const Matrix4& other) const;
-
-    /**
-     * @param other Matrix4 to subtract by.
-     * @return The resultant Matrix4.
-    */
-    Matrix4 operator-(const Matrix4& other) const;
     
     /**
      * @param other Matrix4 to multiply by.
@@ -34,40 +22,20 @@ public:
     Matrix4 operator*(const Matrix4& other) const;
     
     /**
-     * @param other Matrix4 to divide by.
-     * @return The resultant Matrix4.
-    */
-    Matrix4 operator/(const Matrix4& other) const;
-
-    /**
-     * @param other Vector4 to add with.
-     * @return The resultant Vector4.
-    */
-    Vector4 operator+(const Vector4& other) const;
-
-    /**
-     * @param other Vector4 to subtract by.
-     * @return The resultant Vector4.
-    */
-    Vector4 operator-(const Vector4& other) const;
-    
-    /**
      * @param other Vector4 to multiply by.
      * @return The resultant Vector4.
     */
     Vector4 operator*(const Vector4& other) const;
     
     /**
-     * @param other Vector4 to divide by.
-     * @return The resultant Vector4.
-    */
-    Vector4 operator/(const Vector4& other) const;
-
-    /**
-     * @brief Sets this Matrix4 instance to the identity matrix.
+     * @brief Sets this instance to the identity matrix.
     */
     void SetIdentity(); 
 
+    /**
+     * @brief swaps the values of each column and row of this instance.
+    */
+   void Transpose();
 
     /**
      * @brief Computes an orthrophic projection matrix.
@@ -80,7 +48,11 @@ public:
     */
     static Matrix4 Ortho(float left, float right, float bottom, float top, float near, float far);
 
-private:
+    /**
+     * @brief Prints the values of this instance to the terminal.
+    */
+    void Print() const;
+
     float m[4][4]; 
 };
 }

@@ -1,5 +1,6 @@
-#include <iostream>
 #include "Vector3.hpp"
+#include <iostream>
+#include <iomanip>
 
 namespace Ess 
 {
@@ -57,5 +58,12 @@ Vector3 Vector3::Cross(const Vector3& other) const
 float Vector3::Magnitude() const 
 {
     return std::sqrt((x*x) + (y*y) + (z*z));
+}
+
+void Vector3::Print() const 
+{
+    std::cout << "(" << std::setw(8) << std::setprecision(4) << std::fixed << x << ", "
+        << std::setw(8) << std::setprecision(4) << std::fixed << y << ", "
+        << std::setw(8) << std::setprecision(4) << std::fixed << z << ")" << std::endl;
 }
 }
