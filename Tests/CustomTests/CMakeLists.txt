@@ -5,4 +5,4 @@ target_include_directories(CustomTest
     PUBLIC ${CMAKE_SOURCE_DIR}/Sources/ 
 )
 
-target_link_libraries(CustomTest Sources)
+target_link_libraries(CustomTest ${PROJECT_NAME})

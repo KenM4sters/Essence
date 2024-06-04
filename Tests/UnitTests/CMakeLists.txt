@@ -4,7 +4,7 @@ add_executable(ExampleTest main.cpp)
 target_include_directories(ExampleTest
     PUBLIC ${CMAKE_SOURCE_DIR}/External/GoogleTest/googletest/include/
 )
-target_link_libraries(ExampleTest Sources gtest_main)
+target_link_libraries(ExampleTest ${PROJECT_NAME} gtest_main)
 
 add_test(
     NAME ExampleTest
